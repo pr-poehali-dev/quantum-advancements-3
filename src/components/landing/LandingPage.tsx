@@ -3,11 +3,13 @@ import { motion, useScroll, useSpring } from 'framer-motion'
 import Section from './Section'
 import Layout from './Layout'
 import ContactModal from './ContactModal'
+import ContactsModal from './ContactsModal'
 import { sections } from './sections'
 
 export default function LandingPage() {
   const [activeSection, setActiveSection] = useState(0)
-  const [modalOpen, setModalOpen] = useState(false)
+  const [formOpen, setFormOpen] = useState(false)
+  const [contactsOpen, setContactsOpen] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({ container: containerRef })
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 })
@@ -100,11 +102,12 @@ export default function LandingPage() {
             key={section.id}
             {...section}
             isActive={index === activeSection}
-            onButtonClick={section.showButton ? () => setModalOpen(true) : undefined}
+            onButtonClick={section.id === 'hero' ? () => setContactsOpen(true) : section.showButton ? () => setFormOpen(true) : undefined}
           />
         ))}
       </div>
-      <ContactModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+      <ContactModal isOpen={formOpen} onClose={() => setFormOpen(false)} />
+      <ContactsModal isOpen={contactsOpen} onClose={() => setContactsOpen(false)} />
     </Layout>
   )
 }
