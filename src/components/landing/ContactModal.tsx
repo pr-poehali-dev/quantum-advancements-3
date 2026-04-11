@@ -49,6 +49,30 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
               </a>
 
               <a
+                href="https://wa.me/79123508159"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-white hover:text-[#25D366] transition-colors group"
+              >
+                <span className="w-10 h-10 rounded-full bg-[#25D366]/10 flex items-center justify-center group-hover:bg-[#25D366]/20 transition-colors">
+                  <Icon name="MessageCircle" size={18} />
+                </span>
+                <span className="text-lg font-medium">WhatsApp</span>
+              </a>
+
+              <a
+                href="https://t.me/+79123508159"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-white hover:text-[#2AABEE] transition-colors group"
+              >
+                <span className="w-10 h-10 rounded-full bg-[#2AABEE]/10 flex items-center justify-center group-hover:bg-[#2AABEE]/20 transition-colors">
+                  <Icon name="Send" size={18} />
+                </span>
+                <span className="text-lg font-medium">Telegram</span>
+              </a>
+
+              <a
                 href="mailto:info@a3group.online"
                 className="flex items-center gap-3 text-white hover:text-[#4A9EFF] transition-colors group"
               >
