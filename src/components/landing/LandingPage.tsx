@@ -45,12 +45,33 @@ export default function LandingPage() {
     <Layout>
       <header className="fixed top-0 left-0 right-0 z-30 flex items-center px-8 py-5">
         <div className="flex items-center gap-3">
-          <img
+          <motion.img
             src="https://cdn.poehali.dev/projects/f18b5393-5ab9-487f-9ec1-661db3925340/files/532db3eb-2090-4a91-a5a2-1aef97f53be1.jpg"
             alt="А3 логотип"
             className="w-10 h-10 rounded-lg object-cover brightness-125 contrast-110 drop-shadow-[0_0_8px_rgba(74,158,255,0.6)]"
+            initial={{ opacity: 0, rotate: -15, scale: 0.5 }}
+            animate={{ opacity: 1, rotate: 0, scale: 1 }}
+            transition={{ duration: 0.6, ease: 'backOut' }}
           />
-          <span className="text-2xl tracking-[0.2em] uppercase" style={{ fontFamily: "'Bebas Neue', sans-serif", background: 'linear-gradient(135deg, #7CB9E8 0%, #4A9EFF 40%, #B8D4E8 80%, #7CB9E8 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>ООО «А3»</span>
+          <motion.span
+            className="text-2xl tracking-[0.2em] uppercase"
+            style={{ fontFamily: "'Bebas Neue', sans-serif", background: 'linear-gradient(135deg, #7CB9E8 0%, #4A9EFF 40%, #B8D4E8 80%, #7CB9E8 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
+            whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+          >
+            {'ООО «А3»'.split('').map((char, i) => (
+              <motion.span
+                key={i}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.4 + i * 0.05 }}
+              >
+                {char}
+              </motion.span>
+            ))}
+          </motion.span>
         </div>
       </header>
       <nav className="fixed top-0 right-0 h-screen flex flex-col justify-center z-30 p-4">
