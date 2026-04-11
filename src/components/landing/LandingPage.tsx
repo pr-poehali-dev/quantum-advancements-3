@@ -50,7 +50,7 @@ export default function LandingPage() {
             alt="А3 логотип"
             className="w-10 h-10 rounded-lg object-cover"
           />
-          <span className="text-white font-bold text-xl tracking-wide">ООО «А3»</span>
+          <span className="text-white text-2xl tracking-[0.2em] uppercase" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>ООО «А3»</span>
         </div>
       </header>
       <nav className="fixed top-0 right-0 h-screen flex flex-col justify-center z-30 p-4">
