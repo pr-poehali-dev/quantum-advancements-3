@@ -66,9 +66,12 @@ def handler(event: dict, context) -> dict:
 
         msg.attach(MIMEText(html, 'html'))
 
-        with smtplib.SMTP_SSL(smtp_host, 465) as server:
-            server.login(smtp_user, smtp_password)
-            server.sendmail(smtp_user, to_email, msg.as_string())
+        try:
+            with smtplib.SMTP_SSL(smtp_host, 465) as server:
+                server.login(smtp_user, smtp_password)
+                server.sendmail(smtp_user, to_email, msg.as_string())
+        except Exception:
+            pass
 
     return {
         'statusCode': 200,
