@@ -49,7 +49,7 @@ def handler(event: dict, context) -> dict:
     smtp_host = os.environ.get('SMTP_HOST', '')
     smtp_user = os.environ.get('SMTP_USER', '')
     smtp_password = os.environ.get('SMTP_PASSWORD', '')
-    to_email = 'info@a3group.online'
+    to_email = 'info1@a3group.online'
 
     msg = MIMEMultipart('alternative')
     msg['Subject'] = f'Новая заявка с сайта А3 Групп от {name}'
