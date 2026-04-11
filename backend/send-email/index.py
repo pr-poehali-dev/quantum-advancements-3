@@ -1,10 +1,13 @@
 import json
 import os
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 import psycopg2
 
 
 def handler(event: dict, context) -> dict:
-    """Сохранение заявки с сайта А3 Групп в БД"""
+    """Сохранение заявки в БД и отправка письма на email"""
 
     if event.get('httpMethod') == 'OPTIONS':
         return {
@@ -40,6 +43,32 @@ def handler(event: dict, context) -> dict:
     conn.commit()
     cur.close()
     conn.close()
+
+    smtp_host = os.environ.get('SMTP_HOST', '')
+    smtp_user = os.environ.get('SMTP_USER', '')
+    smtp_password = os.environ.get('SMTP_PASSWORD', '')
+    to_email = 'info1@a3group.online'
+
+    if smtp_host and smtp_user and smtp_password:
+        msg = MIMEMultipart('alternative')
+        msg['Subject'] = f'Новая заявка с сайта А3 Групп от {name}'
+        msg['From'] = smtp_user
+        msg['To'] = to_email
+
+        html = f"""
+        <html><body>
+        <h2>Новая заявка с сайта А3 Групп</h2>
+        <p><b>Имя:</b> {name}</p>
+        <p><b>Телефон:</b> {phone}</p>
+        <p><b>Сообщение:</b> {message if message else '—'}</p>
+        </body></html>
+        """
+
+        msg.attach(MIMEText(html, 'html'))
+
+        with smtplib.SMTP_SSL(smtp_host, 465) as server:
+            server.login(smtp_user, smtp_password)
+            server.sendmail(smtp_user, to_email, msg.as_string())
 
     return {
         'statusCode': 200,
