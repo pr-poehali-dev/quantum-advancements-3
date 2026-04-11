@@ -43,6 +43,16 @@ export default function LandingPage() {
 
   return (
     <Layout>
+      <header className="fixed top-0 left-0 right-0 z-30 flex items-center px-8 py-5">
+        <div className="flex items-center gap-3">
+          <img
+            src="https://cdn.poehali.dev/projects/f18b5393-5ab9-487f-9ec1-661db3925340/files/2a88a1a5-1fe9-40da-af6a-602d1a6db32f.jpg"
+            alt="А3 логотип"
+            className="w-10 h-10 rounded-lg object-cover"
+          />
+          <span className="text-white font-bold text-xl tracking-wide">ООО «А3»</span>
+        </div>
+      </header>
       <nav className="fixed top-0 right-0 h-screen flex flex-col justify-center z-30 p-4">
         {sections.map((section, index) => (
           <button
