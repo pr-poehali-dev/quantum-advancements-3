@@ -48,9 +48,9 @@ export default function LandingPage() {
           <img
             src="https://cdn.poehali.dev/projects/f18b5393-5ab9-487f-9ec1-661db3925340/files/6e1e6029-e291-4a4d-8265-4754c4a5f0cf.jpg"
             alt="А3 логотип"
-            className="w-10 h-10 rounded-lg object-cover"
+            className="w-10 h-10 rounded-lg object-cover brightness-125 contrast-110 drop-shadow-[0_0_8px_rgba(74,158,255,0.6)]"
           />
-          <span className="text-white text-2xl tracking-[0.2em] uppercase" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>ООО «А3»</span>
+          <span className="text-2xl tracking-[0.2em] uppercase" style={{ fontFamily: "'Bebas Neue', sans-serif", background: 'linear-gradient(135deg, #7CB9E8 0%, #4A9EFF 40%, #B8D4E8 80%, #7CB9E8 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>ООО «А3»</span>
         </div>
       </header>
       <nav className="fixed top-0 right-0 h-screen flex flex-col justify-center z-30 p-4">
