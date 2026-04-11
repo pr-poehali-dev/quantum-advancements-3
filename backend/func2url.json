@@ -1,3 +1,4 @@
 {
+  "get-leads": "https://functions.poehali.dev/11c9ba42-8993-4e20-a04b-8554ea600498",
   "send-email": "https://functions.poehali.dev/6c4949cf-bdfb-4578-aae6-f82239ab29b9"
 }
