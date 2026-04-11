@@ -24,6 +24,7 @@ def handler(event: dict, context) -> dict:
     body = json.loads(event.get('body', '{}'))
     name = body.get('name', '').strip()
     phone = body.get('phone', '').strip()
+    email = body.get('email', '').strip()
     message = body.get('message', '').strip()
 
     if not name or not phone:
@@ -37,8 +38,8 @@ def handler(event: dict, context) -> dict:
     cur = conn.cursor()
     schema = os.environ.get('MAIN_DB_SCHEMA', 'public')
     cur.execute(
-        f"INSERT INTO {schema}.leads (name, phone, message) VALUES (%s, %s, %s)",
-        (name, phone, message or None)
+        f"INSERT INTO {schema}.leads (name, phone, email, message) VALUES (%s, %s, %s, %s)",
+        (name, phone, email or None, message or None)
     )
     conn.commit()
     cur.close()
@@ -60,6 +61,7 @@ def handler(event: dict, context) -> dict:
         <h2>Новая заявка с сайта А3 Групп</h2>
         <p><b>Имя:</b> {name}</p>
         <p><b>Телефон:</b> {phone}</p>
+        <p><b>Email:</b> {email if email else '—'}</p>
         <p><b>Сообщение:</b> {message if message else '—'}</p>
         </body></html>
         """

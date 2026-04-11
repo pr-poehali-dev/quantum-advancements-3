@@ -1,0 +1,1 @@
+ALTER TABLE t_p52439955_quantum_advancements.leads ADD COLUMN email text NULL;

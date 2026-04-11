@@ -14,6 +14,7 @@ interface ContactModalProps {
 export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
+  const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
@@ -27,12 +28,13 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
       const res = await fetch(func2url['send-email'], {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, phone, message }),
+        body: JSON.stringify({ name, phone, email, message }),
       })
       if (res.ok) {
         setSuccess(true)
         setName('')
         setPhone('')
+        setEmail('')
         setMessage('')
       } else {
         setError('Произошла ошибка. Попробуйте позже.')
@@ -107,6 +109,13 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     onChange={e => setPhone(e.target.value)}
                     required
                     type="tel"
+                    className="bg-white/5 border-white/10 text-white placeholder:text-neutral-500 focus:border-[#4A9EFF]"
+                  />
+                  <Input
+                    placeholder="Электронная почта"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                    type="email"
                     className="bg-white/5 border-white/10 text-white placeholder:text-neutral-500 focus:border-[#4A9EFF]"
                   />
                   <Textarea
