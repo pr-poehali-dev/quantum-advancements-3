@@ -4,7 +4,7 @@ import psycopg2
 
 
 def handler(event: dict, context) -> dict:
-    """Получение списка заявок с сайта А3 Групп"""
+    """Получение списка заявок с сайта А5 Групп"""
 
     if event.get('httpMethod') == 'OPTIONS':
         return {

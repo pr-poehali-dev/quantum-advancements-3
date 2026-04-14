@@ -52,13 +52,13 @@ def handler(event: dict, context) -> dict:
 
     if smtp_host and smtp_user and smtp_password:
         msg = MIMEMultipart('alternative')
-        msg['Subject'] = f'Новая заявка с сайта А3 Групп от {name}'
+        msg['Subject'] = f'Новая заявка с сайта А5 Групп от {name}'
         msg['From'] = smtp_user
         msg['To'] = to_email
 
         html = f"""
         <html><body>
-        <h2>Новая заявка с сайта А3 Групп</h2>
+        <h2>Новая заявка с сайта А5 Групп</h2>
         <p><b>Имя:</b> {name}</p>
         <p><b>Телефон:</b> {phone}</p>
         <p><b>Email:</b> {email if email else '—'}</p>

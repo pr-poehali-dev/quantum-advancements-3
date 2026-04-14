@@ -51,7 +51,7 @@ export default function LandingPage() {
         <div className="flex items-center gap-3">
           <motion.img
             src="https://cdn.poehali.dev/projects/f18b5393-5ab9-487f-9ec1-661db3925340/files/532db3eb-2090-4a91-a5a2-1aef97f53be1.jpg"
-            alt="А3 логотип"
+            alt="А5 логотип"
             className="w-10 h-10 rounded-lg object-cover brightness-125 contrast-110 drop-shadow-[0_0_8px_rgba(74,158,255,0.6)]"
             initial={{ opacity: 0, rotate: -15, scale: 0.5 }}
             animate={{ opacity: 1, rotate: 0, scale: 1 }}
@@ -65,7 +65,7 @@ export default function LandingPage() {
             transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
             whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
           >
-            {'Компания «А3 ГРУПП»'.split('').map((char, i) => (
+            {'Компания «А5 ГРУПП»'.split('').map((char, i) => (
               <motion.span
                 key={i}
                 initial={{ opacity: 0, y: -10 }}
