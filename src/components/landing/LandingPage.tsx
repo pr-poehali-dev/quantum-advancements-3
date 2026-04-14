@@ -50,7 +50,7 @@ export default function LandingPage() {
       <header className="fixed top-0 left-0 right-0 z-30 flex items-center px-8 py-5">
         <div className="flex items-center gap-3">
           <motion.img
-            src="https://cdn.poehali.dev/projects/f18b5393-5ab9-487f-9ec1-661db3925340/files/5003b318-c9d9-4227-8745-1e6c5ac8e79b.jpg"
+            src="https://cdn.poehali.dev/projects/f18b5393-5ab9-487f-9ec1-661db3925340/files/f39f88a7-e3ee-4a40-9bd8-317d55d4f7d1.jpg"
             alt="А5 логотип"
             className="w-16 h-16 rounded-lg object-cover drop-shadow-[0_0_10px_rgba(74,158,255,0.7)]"
             initial={{ opacity: 0, rotate: -15, scale: 0.5 }}
