@@ -70,7 +70,7 @@ export default function LandingPage() {
         <motion.img
           src="https://cdn.poehali.dev/projects/f18b5393-5ab9-487f-9ec1-661db3925340/files/f39f88a7-e3ee-4a40-9bd8-317d55d4f7d1.jpg"
           alt="А5 логотип"
-          className="w-32 h-32 rounded-lg object-cover drop-shadow-[0_0_10px_rgba(74,158,255,0.7)]"
+          className="w-24 h-24 rounded-lg object-cover drop-shadow-[0_0_10px_rgba(74,158,255,0.7)]"
           initial={{ opacity: 0, rotate: 15, scale: 0.5 }}
           animate={{ opacity: 1, rotate: 0, scale: 1 }}
           transition={{ duration: 0.6, ease: 'backOut' }}
