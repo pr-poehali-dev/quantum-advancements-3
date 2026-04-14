@@ -47,36 +47,34 @@ export default function LandingPage() {
 
   return (
     <Layout>
-      <header className="fixed top-0 left-0 right-0 z-30 flex items-center px-8 py-5">
-        <div className="flex items-center gap-3">
-          <motion.img
-            src="https://cdn.poehali.dev/projects/f18b5393-5ab9-487f-9ec1-661db3925340/files/f39f88a7-e3ee-4a40-9bd8-317d55d4f7d1.jpg"
-            alt="А5 логотип"
-            className="w-32 h-32 rounded-lg object-cover drop-shadow-[0_0_10px_rgba(74,158,255,0.7)]"
-            initial={{ opacity: 0, rotate: -15, scale: 0.5 }}
-            animate={{ opacity: 1, rotate: 0, scale: 1 }}
-            transition={{ duration: 0.6, ease: 'backOut' }}
-          />
-          <motion.span
-            className="text-2xl tracking-[0.2em] uppercase"
-            style={{ fontFamily: "'Russo One', sans-serif", background: 'linear-gradient(135deg, #7CB9E8 0%, #4A9EFF 40%, #B8D4E8 80%, #7CB9E8 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
-            whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-          >
-            {'Компания «А5 ГРУПП»'.split('').map((char, i) => (
-              <motion.span
-                key={i}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.4 + i * 0.05 }}
-              >
-                {char}
-              </motion.span>
-            ))}
-          </motion.span>
-        </div>
+      <header className="fixed top-0 left-0 right-0 z-30 flex items-center justify-between px-8 py-5">
+        <motion.span
+          className="text-2xl tracking-[0.2em] uppercase"
+          style={{ fontFamily: "'Russo One', sans-serif", background: 'linear-gradient(135deg, #7CB9E8 0%, #4A9EFF 40%, #B8D4E8 80%, #7CB9E8 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
+          whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+        >
+          {'Компания «А5 ГРУПП»'.split('').map((char, i) => (
+            <motion.span
+              key={i}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.4 + i * 0.05 }}
+            >
+              {char}
+            </motion.span>
+          ))}
+        </motion.span>
+        <motion.img
+          src="https://cdn.poehali.dev/projects/f18b5393-5ab9-487f-9ec1-661db3925340/files/f39f88a7-e3ee-4a40-9bd8-317d55d4f7d1.jpg"
+          alt="А5 логотип"
+          className="w-32 h-32 rounded-lg object-cover drop-shadow-[0_0_10px_rgba(74,158,255,0.7)]"
+          initial={{ opacity: 0, rotate: 15, scale: 0.5 }}
+          animate={{ opacity: 1, rotate: 0, scale: 1 }}
+          transition={{ duration: 0.6, ease: 'backOut' }}
+        />
       </header>
       <nav className="fixed top-0 right-0 h-screen flex flex-col justify-center z-30 p-4">
         {sections.map((section, index) => (
